@@ -1,6 +1,6 @@
 // Configuración del Store para Centros
 var storeCentros = new Ext.data.JsonStore({
-    url: '../servicesAjax/getCentros.php',
+    url: '../servicesAjax/DSListaCentrosFRAJAX.php',
     root: 'data',
     totalProperty: 'total',
     fields: ['codigop', 'nombrep'],
@@ -9,7 +9,7 @@ var storeCentros = new Ext.data.JsonStore({
 
 // Configuración del Store para Cargos
 var storeCargos = new Ext.data.JsonStore({
-    url: '../servicesAjax/getCargos.php',
+    url: '../servicesAjax/DSListaCargosFRAJAX.php',
     root: 'data',
     totalProperty: 'total',
     fields: ['codigop', 'nombrep'],
@@ -190,7 +190,7 @@ var extensionCombo = new Ext.form.ComboBox({
                 handler: function () {
                     if (formPersonal.getForm().isValid()) {
                         formPersonal.getForm().submit({
-                            url: tipo === 'nuevo' ? '../servicesAjax/crearPersonal.php?opcion=nuevo' : '../servicesAjax/crearPersonal.php?opcion=modificar',
+                            url: tipo === 'nuevo' ? '../servicesAjax/DSabmPersonalAjax.php?opcion=nuevo' : '../servicesAjax/DSabmPersonalAjax.php?opcion=modificar',
                             params: tipo === 'modificar' ? { COD_PERSONAL: record.get('COD_PERSONAL') } : {},
                             success: function () {
                                 Ext.namespace.storePersonal.reload();

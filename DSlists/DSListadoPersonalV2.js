@@ -1,7 +1,7 @@
 Ext.onReady(function() {
     // Definición del Store
     Ext.namespace.storePersonal = new Ext.data.JsonStore({
-        url: '../servicesAjax/listadoPersonal.php',
+        url: '../servicesAjax/DSdesactivarPersonalAJAX.php',
         root: 'data',
         totalProperty: 'total',
         fields: ['COD_PERSONAL', 'NOMBRE', 'NOMBRE2', 'AP_PATERNO', 'AP_MATERNO', 'CI', 'EXTENSION', 'FECHA_NACIMIENTO',
