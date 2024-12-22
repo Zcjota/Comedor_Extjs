@@ -1,0 +1,12 @@
+{
+    "name": "junior/comedor",
+    "description": "cosas",
+    "authors": [
+        {
+            "name": "Jur"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^3.6"
+    }
+}
