@@ -1,7 +1,7 @@
 Ext.onReady(function() {
     // Definición del Store
     Ext.namespace.storePersonal = new Ext.data.JsonStore({
-        url: '../servicesAjax/DSdesactivarPersonalAJAX.php',
+        url: '../servicesAjax/listadoPersonal.php',
         root: 'data',
         totalProperty: 'total',
         fields: ['COD_PERSONAL', 'NOMBRE', 'NOMBRE2', 'AP_PATERNO', 'AP_MATERNO', 'CI', 'EXTENSION', 'FECHA_NACIMIENTO',
@@ -120,7 +120,7 @@ var personalGrid = new Ext.grid.GridPanel({
                     Ext.MessageBox.confirm('Confirmación', '¿Está seguro de eliminar este registro?', function(btn) {
                         if (btn === 'yes') {
                             Ext.Ajax.request({
-                                url: '../servicesAjax/eliminarPersonal.php',
+                                url: '../servicesAjax/DSdesactivarPersonalAJAX.php',
                                 params: { COD_PERSONAL: record.get('COD_PERSONAL') },
                                 success: function(response) {
                                     Ext.namespace.storePersonal.reload();

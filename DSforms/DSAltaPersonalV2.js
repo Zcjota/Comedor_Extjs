@@ -187,6 +187,9 @@ var extensionCombo = new Ext.form.ComboBox({
         buttons: [
             {
                 text: 'Guardar',
+                icon: '../img/save.png',
+			    iconCls: 'x-btn-text-icon',
+			    minWidth: 80,
                 handler: function () {
                     if (formPersonal.getForm().isValid()) {
                         formPersonal.getForm().submit({
@@ -206,6 +209,9 @@ var extensionCombo = new Ext.form.ComboBox({
             },
             {
                 text: 'Cancelar',
+			    icon: '../img/delete.png',
+			    iconCls: 'x-btn-text-icon',
+			    minWidth: 80,
                 handler: function () {
                     ventanaPersonal.close();
                 }

@@ -454,7 +454,8 @@ function EnvioMail($mailCliente,$cliente,$tipoform,$nombresolicitante)
 				
 				'  <strong> Por favor ingrese a la aplicación de RRHH para aprobar o bien rechazar la solicitud de '.$nombresolicitante.'. </strong><br> '.
 				//'  <strong> link: http://www.google.com.bo </strong><br> '.
-				'  <strong>  Pinche aquí para ingresar al sistema:  http://swrh.madepa.com.bo/ </strong><br><br><br> '.
+				// '  <strong>  Pinche aquí para ingresar al sistema:  http://swrh.madepa.com.bo/ </strong><br><br><br> '.
+				'  <strong>  Pinche aquí para ingresar al sistema:  http://www.google.com.bo </strong><br><br><br> '.
 				'  <strong>  MENÚ PRINCIPAL > APROBACIONES > PENDIENTES DE APROBACIÓN </strong><br><br><br> '.
 				'  <strong> NOTA: Este mensaje es de caracter informativo, favor no responder. </strong><br> '.
 				'<br>'.
@@ -3314,7 +3315,7 @@ function EnvioMailUsuarioNuevo($mailuser,$usuario,$login,$password)
 			$Registros ='';	
 			$body = '<body>'.
 				'<div style="width: 640px; font-family: Arial, Helvetica, sans-serif; font-size: 11px;">'.
-				'<div align="center"><a href="http://swrh.madepa.com.bo"><img src="http://swrh.madepa.com.bo/MADEPA/img/CaratulaMail.jpg"></a></div><br>'.
+				// '<div align="center"><a href="http://swrh.madepa.com.bo"><img src="http://swrh.madepa.com.bo/MADEPA/img/CaratulaMail.jpg"></a></div><br>'.
 				'<br>'.
 				 $Registros . '</table>'.
 				'<br>'.
@@ -3324,7 +3325,7 @@ function EnvioMailUsuarioNuevo($mailuser,$usuario,$login,$password)
 				'  <strong>  - Usuario Provisional: '.$login.'</strong><br> '.
 				'  <strong>  - Password Provisional: '.$password.'</strong><br><br> '.
 				'  <strong>  Una vez ingresado a la aplicación, el sistema le solicitará cambie su Usuario y Password a libre elección. </strong><br><br> '.
-				'  <strong>  Pinche aquí para ingresar al sistema:  http://swrh.madepa.com.bo/ </strong><br><br> '.
+				// '  <strong>  Pinche aquí para ingresar al sistema:  http://swrh.madepa.com.bo/ </strong><br><br> '.
 				'  <strong>  Favor tener en cuenta que el Sistema Web de RRHH puede que no funcione de manera óptima con Internet Explorer, si utilizas este navegador te recomendamos que actualices a una versión superior o bien que utilices una alternativa como Firefox o Chrome. </strong><br><br> '.
 				'<b>Atentamente, </b>'.
 				'<br>'.
@@ -3386,7 +3387,7 @@ function EnvioMailUsuarioConfirmacion($mailuser,$usuario,$login,$password)
 			
 			$body = '<body>'.
 			'<div style="width: 640px; font-family: Arial, Helvetica, sans-serif; font-size: 11px;">'.
-			'<div align="center"><a href="http://swrh.madepa.com.bo"><img src="http://swrh.madepa.com.bo/MADEPA/img/CaratulaMail.jpg"></a></div><br>'.
+			// '<div align="center"><a href="http://swrh.madepa.com.bo"><img src="http://swrh.madepa.com.bo/MADEPA/img/CaratulaMail.jpg"></a></div><br>'.
 			'<br>'.
 			$Registros . '</table>'.
 			'<br>'.
@@ -3484,7 +3485,7 @@ function EnvioMailInformacionCargador($mailuser,$usuario,$tipoform)
 				//'  <strong> link: http://www.google.com.bo </strong><br> '.
 				
 				'  <strong> Usted puede  verificar el avance del mismo ingresando a: </strong><br> '.
-				'  <strong> http://swrh.madepa.com.bo/ </strong><br><br> '.
+				// '  <strong> http://swrh.madepa.com.bo/ </strong><br><br> '.
 				'  <strong> Menú Principal > Aprobaciones > Status de Aprobaciones </strong><br><br>  '.
 				'  <strong> Se agradece su atención </strong><br> '.
 				'<br>'.
