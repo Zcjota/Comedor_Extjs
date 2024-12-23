@@ -35,7 +35,7 @@
     <script src="DSListadoUsuario_v3.js" type='text/javascript'></script>
 	<script src="../DSforms/DSAltaUsuario.js" type='text/javascript'></script>
 	<script src="../DSforms/DSModificarUsuario.js" type='text/javascript'></script>	
-	<script src="../DSforms/DSEnvioSMS.js" type='text/javascript'></script>	
+	<!-- <script src="../DSforms/DSEnvioSMS.js" type='text/javascript'></script>	 -->
 	<style type="text/css">
 	.x-grid3-row-alt {
 	background-color: #cccccc !important;  

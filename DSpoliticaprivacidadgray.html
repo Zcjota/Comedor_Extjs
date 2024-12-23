@@ -70,118 +70,118 @@
 				            }
 				        })]
         });
-		storeMarcacion = new Ext.data.JsonStore({  
-			 proxy: new Ext.data.HttpProxy({
-					url: 'servicesAjax/DSListadoMarcacionMovilUltima.php'
-					,timeout: 1000000
-					,method: 'POST'
-			}),
-			root: 'data',   
+		// storeMarcacion = new Ext.data.JsonStore({  
+		// 	 proxy: new Ext.data.HttpProxy({
+		// 			url: 'servicesAjax/DSListadoMarcacionMovilUltima.php'
+		// 			,timeout: 1000000
+		// 			,method: 'POST'
+		// 	}),
+		// 	root: 'data',   
 			
-			totalProperty: 'total',  		
-			fields: ['idultima_marcacion_movil'],
-			listeners: { 
-						load: function(thisStore, record, ids) {
-								//Ext.Msg.hide();	
-								TraerMarcacionMovil(record[0].data.idultima_marcacion_movil);
-							}
-					}
-			}); 
-			storeMarcacion.load();
-			//////actualizar marcacion movil
-		var storeMarcacionMovil = new Ext.data.ArrayStore({// Ext.create('Ext.data.ArrayStore',{  
-			fields: [ 
-			   {name: 'idmarcacion'},
-				{name: 'fecha_marcacion'},
-				{name: 'latitud'},
-				{name: 'longitud'},
-				{name: 'idproposito'},
-				{name: 'idtipo_marcacion'},
-				{name: 'nombre_cliente'},
-				{name: 'celular'}
+		// 	totalProperty: 'total',  		
+		// 	fields: ['idultima_marcacion_movil'],
+		// 	listeners: { 
+		// 				load: function(thisStore, record, ids) {
+		// 						//Ext.Msg.hide();	
+		// 						TraerMarcacionMovil(record[0].data.idultima_marcacion_movil);
+		// 					}
+		// 			}
+		// 	}); 
+		// 	storeMarcacion.load();
+		// 	//////actualizar marcacion movil
+		// var storeMarcacionMovil = new Ext.data.ArrayStore({// Ext.create('Ext.data.ArrayStore',{  
+		// 	fields: [ 
+		// 	   {name: 'idmarcacion'},
+		// 		{name: 'fecha_marcacion'},
+		// 		{name: 'latitud'},
+		// 		{name: 'longitud'},
+		// 		{name: 'idproposito'},
+		// 		{name: 'idtipo_marcacion'},
+		// 		{name: 'nombre_cliente'},
+		// 		{name: 'celular'}
 			   
-			],  
-			id: 0
-		});
-		function TraerMarcacionMovil(idm)
-		{
+		// 	],  
+		// 	id: 0
+		// });
+		// function TraerMarcacionMovil(idm)
+		// {
 			 
-			registros_movil = [];
-			storeMarcacionMovil.loadData(registros_movil);
-			storeDatosGrid = new Ext.data.JsonStore(
-			{
-				proxy: new Ext.data.HttpProxy({
-					url: 'https://solucionesintecruz.com.bo/biometrico/apirest/marcacion.php'
-					,timeout: 1000000
-					,method: 'GET'
-				}),
-				root: 'data',  
-				totalProperty: 'total',
-				fields: ['idmarcacion', 'fecha_marcacion','latitud','longitud','idproposito','idtipo_marcacion','nombre_cliente','celular'],			
-				listeners: { 		       
-					load: function(thisStore, record, ids) 
-					{  					
-						var pos = 0;  
+		// 	registros_movil = [];
+		// 	storeMarcacionMovil.loadData(registros_movil);
+		// 	storeDatosGrid = new Ext.data.JsonStore(
+		// 	{
+		// 		proxy: new Ext.data.HttpProxy({
+		// 			url: 'https://solucionesintecruz.com.bo/biometrico/apirest/marcacion.php'
+		// 			,timeout: 1000000
+		// 			,method: 'GET'
+		// 		}),
+		// 		root: 'data',  
+		// 		totalProperty: 'total',
+		// 		fields: ['idmarcacion', 'fecha_marcacion','latitud','longitud','idproposito','idtipo_marcacion','nombre_cliente','celular'],			
+		// 		listeners: { 		       
+		// 			load: function(thisStore, record, ids) 
+		// 			{  					
+		// 				var pos = 0;  
 							
-						for(i = 0; i<this.getCount();i++){
+		// 				for(i = 0; i<this.getCount();i++){
 						 
-							registro = new Array(13);
-							dimension = registros_movil.length;
+		// 					registro = new Array(13);
+		// 					dimension = registros_movil.length;
 							
-							registro[0] = record[i].data.idmarcacion;
-							registro[1] = record[i].data.fecha_marcacion;
-							registro[2] = record[i].data.latitud;
-							registro[3] = record[i].data.longitud;
-							registro[4] = record[i].data.idproposito;
-							registro[5] = record[i].data.idtipo_marcacion;
-							registro[6] = record[i].data.nombre_cliente;
-							registro[7] = record[i].data.celular;
+		// 					registro[0] = record[i].data.idmarcacion;
+		// 					registro[1] = record[i].data.fecha_marcacion;
+		// 					registro[2] = record[i].data.latitud;
+		// 					registro[3] = record[i].data.longitud;
+		// 					registro[4] = record[i].data.idproposito;
+		// 					registro[5] = record[i].data.idtipo_marcacion;
+		// 					registro[6] = record[i].data.nombre_cliente;
+		// 					registro[7] = record[i].data.celular;
 							
-							registros_movil[dimension] = registro;
+		// 					registros_movil[dimension] = registro;
 							
-						}
+		// 				}
 						
-						storeMarcacionMovil.loadData(registros_movil);
-						var store = storeMarcacionMovil;
-						var datosGrid_m = []; 
-							var i=0;			
-						store.each(function(rec){  					
-								datosGrid_m.push(Ext.apply({id:rec.id},rec.data)); 
-									i++;
+		// 				storeMarcacionMovil.loadData(registros_movil);
+		// 				var store = storeMarcacionMovil;
+		// 				var datosGrid_m = []; 
+		// 					var i=0;			
+		// 				store.each(function(rec){  					
+		// 						datosGrid_m.push(Ext.apply({id:rec.id},rec.data)); 
+		// 							i++;
 							
-						});  
-						registrosGrid_m = Ext.encode(datosGrid_m);
-						ActualizarMarcacionMovil(registrosGrid_m);
-					}
-				}
-			});
-			storeDatosGrid.load({params:{idmarcacion: idm}});
+		// 				});  
+		// 				registrosGrid_m = Ext.encode(datosGrid_m);
+		// 				ActualizarMarcacionMovil(registrosGrid_m);
+		// 			}
+		// 		}
+		// 	});
+		// 	storeDatosGrid.load({params:{idmarcacion: idm}});
 			
 			
 			
-		}
-		function ActualizarMarcacionMovil(registros)
-		{
+		// }
+		// function ActualizarMarcacionMovil(registros)
+		// {
 			
-				Ext.Ajax.request({
-				url:'servicesAjax/DSguardarMarcacionRegyster.php',
-				timeout: 1000000,
-				method:'POST',
-				params:{registros:registros},
-				success:desactivo,
-				failures:no_desactivo
-				});
+		// 		Ext.Ajax.request({
+		// 		url:'servicesAjax/DSguardarMarcacionRegyster.php',
+		// 		timeout: 1000000,
+		// 		method:'POST',
+		// 		params:{registros:registros},
+		// 		success:desactivo,
+		// 		failures:no_desactivo
+		// 		});
 			
-				function desactivo(resp)
-				{
+		// 		function desactivo(resp)
+		// 		{
 						
 
-				}
-				function no_desactivo(resp)
-				{
+		// 		}
+		// 		function no_desactivo(resp)
+		// 		{
 					 
-				}
-		}
+		// 		}
+		// }
 		/////////////////////
     });
 	</script>
