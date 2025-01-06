@@ -10,7 +10,7 @@ function VerificaConBD()
 
     if (!isset($_SESSION['BD']) || !$_SESSION['BD']) {
         
-        $_SESSION['BD'] = mysqli_connect("localhost", "root", "", "madepa");
+        $_SESSION['BD'] = mysqli_connect("localhost", "root", "", "comedor");
 
        
         if (!$_SESSION['BD'] || mysqli_connect_errno()) {
@@ -24,7 +24,7 @@ function VerificaConBD()
 function ConectarConBD()
 {
    
-    $conexion = mysqli_connect("localhost", "root", "", "madepa");
+    $conexion = mysqli_connect("localhost", "root", "", "comedor");
 
    
     if (!$conexion || mysqli_connect_errno()) {

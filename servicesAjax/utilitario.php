@@ -2,8 +2,13 @@
 <?php
 
 		include("../lib/conex.php"); 
-		
-		$conex = ConectarConBD();
+		// include_once("../lib/conex.php");
+
+		// $conex = ConectarConBD();
+		$conex = ConectarConBD(); // Inicializa la conexión correctamente
+if (!$conex) {
+    die("Error al conectar con la base de datos");
+}
 		
 	function asignacion($conex,$cargador,$idusuario,$personalE)
 	{	$cant=0;
@@ -12,7 +17,7 @@
 				$sqlAsignacion=' select count(COD_USUARIO) as TOT from usuario_horario  where COD_USUARIO ='.$idusuario.' and COD_HORARIO='.$personalE.' and  ACTIVO=1 ';
 				//echo "/*-----consulta-------------$sqlAsignacion*/";
 				$resultadoAsig=mysqli_query($conex,$sqlAsignacion);
-				$totAsig = mysqli_fetch_assoc($resultadoAsig);
+				$totAsig = mysqli_fetch_assoc($conex,$resultadoAsig);
 				$tAsig=$totAsig['TOT'];
 				if($tAsig!=0)
 				{
@@ -59,7 +64,7 @@
 		 while ($rowVariable = mysqli_fetch_assoc($resultadoVariable)) 
 		{	
 			$horario=$rowVariable['NOMBRE_HORARIO'];
-			$tipoAsignacion1=asignacion($rcargador,$ridcargador,$rowVariable['COD_HORARIO']);
+			$tipoAsignacion1=asignacion($conex,$rcargador,$ridcargador,$rowVariable['COD_HORARIO']);
 			if($tipoAsignacion1==1  || $rcargador ==2 )
 			{
 				$campos= $campos."'".$horario."'".',';
@@ -197,7 +202,9 @@
 		
 		 ' ORDER BY NOMBRE_HORARIO ';
 		 
-		$resultadoVariable=mysqli_query($conex,$sqlvariable);  
+		// $resultadoVariable=mysqli_query($sqlvariable,$conex);  
+		$resultadoVariable = mysqli_query($conex, $sqlvariable);
+
 		
 		$ban=0;
 		$campos1=$campos;
